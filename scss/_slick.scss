@@ -96,82 +96,31 @@
     }
 }
 .slick-arrow.slick-hidden {
-    display: block;
+    display: none;
 }
 
-// my style
 .slider {
-    .slick-arrow {
-        position: absolute;
-        bottom: 0;
-        // width: 68px;
-        // height: 22px;
-        color: $white;
-        font-size: 14px;
-        line-height: 16px;
-        font-weight: 700;
-        padding: 5px 10px;
-        text-transform: uppercase;
-        background-color: $red;
-        border: none;
-        border-radius: 10px;
-        &::hover {
-            background-color: $light-red;
-        }
-    }
-    .slick-prev {
-        left: 20px;
-    }
-    .slick-next {
-        right: -20px;
-    }
-}
-
-.the-slider {
-    padding-bottom: 20px;
-    // po dizajnu
-    .slick-dots{
+    .slick-dots {
         display: flex;
+        flex-wrap: wrap;
         justify-content: center;
-        padding: 20px 0;
-        li{
-            button{
-                font-size: 0;
-                margin: 0 3px;
-                width: 15px;
-                height: 15px;
-                border-radius: 50%;
-                border: none;
+        button {
+            font-size: 0;
+            border: none;
+            width: 40px;
+            height: 7px;
+            background-color: $light;
+            margin: 0 5px;
+            cursor: pointer;
+            &:hover {
                 background-color: $light-grey;
             }
         }
         .slick-active {
-            button{
-                background-color: $white;
-                border: 3px solid $black;
-                border-radius: 50%;
+            button {
+                background-color: $blue;
             }
         }
     }
 }
 
-@include mq(tablet) {
-    .the-slider {
-        padding-bottom: 10px;
-    }
-}
-
-@include mq(phone) {
-    .the-slider {
-        padding-bottom: 0;
-        .slick-dots {
-            padding: 10px 0;
-            li{
-                button {
-                    width: 10px;
-                    height: 10px;
-                }
-            }
-        }
-    }
-}

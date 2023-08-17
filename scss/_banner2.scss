@@ -1,0 +1,83 @@
+.banner2 {
+    background-color: $blue;
+}
+
+.banner2-holder {
+    display: flex;
+    align-items: center;
+}
+
+.banner2-title-holder{
+    flex: 1 1 20%;
+    max-width: 20%;
+    padding: 30px 0;
+    margin-right: 20px;
+}
+
+.banner2-title {
+    color: $white;
+    @include text(50px,60px,700);
+}
+
+.banner2-subtitle {
+    color: $white;
+    @include text(25px,30px,400);
+}
+
+.banner2-text-holder {
+    flex: 1 1 80%;
+    max-width: 80%;
+    margin: 20px 0 20px 20px;
+    position: relative;
+}
+
+.vertical-line {
+    width: 2px;
+    height: 100%;
+    background-color: $white;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.banner2-text {
+    color: $white;
+    @include text(16px,22px,400);
+    margin-left: 20px;
+}
+
+@include mq(tablet) {
+    .banner2-title-holder {
+        padding: 20px 0;
+    }
+    .banner2-title {
+        font-size: 40px;
+        line-height: 50px;
+    }
+    .banner2-subtitle {
+        font-size: 22px;
+        line-height: 30px;
+    }
+}
+
+@include mq(phone) {
+    .banner2-title-holder {
+        text-align: center;
+    }
+    .banner2-title {
+        font-size: 25px;
+        line-height: 30px;
+    }
+    .banner2-subtitle {
+        font-size: 18px;
+        line-height: 20px;
+    }
+    .banner2-text-holder {
+        margin-left: 10px;
+    }
+    .banner2-text {
+        font-size: 14px;
+        line-height: 20px;
+        margin-left: 10px;
+    }
+}

@@ -1,213 +1,89 @@
-/* footer */
 .footer {
-    background-color: $light;
+    padding: 40px 0;
+    background-color: $footer-blue;
+    .smedia-item-link {
+        height: 30px;
+        width: 30px;
+        svg {
+            height: 15px;
+        }
+    }
 }
 
-.footer-top {
-    padding: 30px 0 0;
-}
-
-.footer-row {
+.footer-holder {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
 }
 
-.footer-col {
-    flex: 1 1 25%;
-    max-width: 25%;
-}
-
-.footer-col-wide {
-    flex: 1 1 50%;
-    max-width: 50%;
-}
-
-.footer-title {
-    font-size: 18px;
-    line-height: 20px;
-    font-weight: 400;
-    color: $black;
-    display: block;
+.footer-logo {
     margin-bottom: 20px;
-    text-transform: capitalize;
+    &:hover {
+        opacity: 0.7;
+    }
 }
 
-.footer-blog {
+.footer-logo-src {
+    width: 200px;
+    height: 75px;
+}
+
+.footer-nav {
     display: flex;
     flex-wrap: wrap;
-    padding-bottom: 20px;
-}
-
-.blog-link {
-    flex: 1 1 22%;
-    max-width: 22%;
-    min-width: 120px;
-    min-height: 120px;
-    &:hover {
-        opacity: 0.5;
-    }
-}
-
-.footer-image {
-    border: 1px solid $light-grey;
-    padding: 5px;
-    height: 100%;
-    width: 100%;
-}
-
-.footer-text {
-    flex: 1 1 78%;
-    max-width: 78%;
-    padding: 10px 20px;
-}
-
-.footer-blog-title {
-    color: $red;
-    font-size: 16px;
-    line-height: 18px;
-    font-weight: 700;
-    margin-bottom: 5px;
-}
-
-.footer-blog-text {
-    color: $light-grey;
-    font-size: 14px;
-    line-height: 22px;
-    font-weight: 400;
-}
-
-.footer-address {
-    padding-right: 20px;
-}
-
-.footer-address-info {
-    font-size: 15px;
-    line-height: 22px;;
-    font-weight: 400;
-    color: $light-grey;
-    margin-bottom: 10px;
-    text-transform: capitalize;
-    .bold {
-        font-weight: 700;
-    }
-}
-
-.footer-address-numb {
-    font-size: 15px;
-    line-height: 22px;;
-    font-weight: 400;
-    color: $light-grey;
+    align-items: center;
+    justify-content: center;
     margin-bottom: 10px;
 }
 
-.footer-link {
-    font-size: 15px;
-    line-height: 22px;
-    font-weight: 400;
-    text-decoration: none;
-    color: $red;
-    &:hover {
-        text-decoration: underline;
-    }
+.footer-nav-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
-.form {
-    width: 100%;
-    display: block;
+.footer-nav-item { 
+    padding: 0 3px;  
 }
 
-.form-input {
-    width: 100%;
-    background-color: $white;
-    height: 30px;
-    color: $light-grey;
-    margin-bottom: 10px;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    line-height: 18px;
-    font-weight: 400;
-}
-
-.form-text {
-    width: 100%;
-    background-color: $white;
-    height: 130px;
-    color: $light-grey;
-    margin-bottom: 10px;
-    border: none;
-    border-radius: 5px;
-    display: block;
-    font-size: 16px;
-    line-height: 18px;
-    font-weight: 400;
-}
-
-.form-btn {
-    background-color: $red;
-    border: none;
-    border-radius: 5px;
-    width: 100px;
-    height: 35px;
-    text-transform: uppercase;
-    font-size: 18px;
-    line-height: 20px;
-    font-weight: 700;
+.footer-nav-link {
+    @include text(14px,16px,400);
     color: $white;
+    text-transform: uppercase;
+    text-decoration: none;
     &:hover {
-        background-color: $light-red;
+        color: $blue;
     }
-}
-
-.footer-bot-text {
-    padding: 20px 0;
-}
-
-.footer-copy,
-.footer-template {
-    color: $grey;
-    font-size: 12px;
-    line-height: 14px;
-    font-weight: 400;
 }
 
 .footer-copy {
-    display: block;
-    float: left;
+    font-size: 14px;
+    line-height: 14px;
+    font-weight: 400;
+    color: $white;
     text-transform: capitalize;
-}
-
-.footer-template {
-    display: block;
-    float: right;
-}
-
-@include mq(tablet) {
-    .footer-col {
-        padding-left: 10px;
-    }
-    .blog-link {
-        min-height: 60px;
-        min-width: 60px;
-    }
-    .footer-text {
-        padding: 10px 10px;
-    }
+    margin-bottom: 30px;
+    text-align: center;
 }
 
 @include mq(phone) {
-    .footer-row {
-        display: block;
+    .footer {
+        padding: 20px 0;
     }
-    .footer-col,
-    .footer-col-wide {
-        @include noflex;
+    .footer-logo {
+        margin-bottom: 10px;
     }
-    .blog-link {
-        min-height: 50px;
-        min-width: 50px;
+    .footer-logo-src {
+        width: 150px;
+        height: 60px;
     }
-    .footer-address {
-        margin-bottom: 20px;
+    .footer-nav-link {
+        font-size: 13px;
+        line-height: 13px;
+    }
+    .footer-copy {
+        font-size: 12px;
+        line-height: 14px;
+        margin-bottom: 15px;
     }
 }

@@ -1,56 +1,44 @@
-var $nav = $ ('.nav');
-var opened = 'opened';
-var $header = $('.header')
+function nav() {
+    var $toggle = $('.toggle');
+    var $nav = $('.nav');
+    var opened = 'opened';
+    var $header = $('.header');
 
-function navigation() {
-  var $toggle = $('.toggle');
-
-  $toggle.on('click', function() {
-    $header.toggleClass (opened);
-    $nav.slideToggle ()
-  })
+    $toggle.on('click',function() {
+        $header.toggleClass (opened);
+        $nav.slideToggle();
+    })
 }
 
-function navScrool() {
-  var windowSize = 768;
-
-  $(window).on('scroll', function() {
-    if ($(this).width()<windowSize) {
-      $nav.removeAttr ('style');
-      $header.removeClass (opened);
-    }
-  })
+function readMore() {
+    $('.card-link').on('mouseover', function(){
+        $(this).animate({fontSize: 20},2000)
+    })
 }
 
-function bannerSlider() {
-  $('.the-slider').slick( {
-    dots: true,
-    infinite: true,
-    speed: 300,
-    slidesToShow: 1,
-    adaptiveHeight: true,
-    prevArrow: false,
-    nextArrow: false
-  });
+function littleCards() {
+    $('.card-text-holder').on('mouseenter',function(){
+        $(this).addClass('active');
+    })
+    $('.card-text-holder').on('mouseleave',function(){
+        $(this).removeClass('active');
+    })
 }
 
-function mobiSlider() {
-  var windowSize = 767;
-  
-  $(window).on('load',function() {
-    if ($(this).width() < windowSize) {
-      $('.slider').slick( {
-        dots: false,
-        infinite: true,
-        speed: 300,
+function slider() {
+    $('.slider').slick({
+        dots: true,
+        infinite: false,
         slidesToShow: 1,
         slidesToScroll: 1,
-      })
-    }
-  })
+        prevArrow: false,
+        nextArrow: false
+    });
 }
 
-navigation();
-navScrool();
-bannerSlider();
-mobiSlider();
+
+
+nav();
+readMore();
+littleCards();
+slider();
