@@ -1,0 +1,54 @@
+.testimonial-carousel {
+    img {
+        width: 100px!important;
+        height: 100px;
+    }
+    .owl-nav {
+        position: absolute;
+        width: 100%;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        color: $white!important;
+        margin-top: 0!important;
+        @include flex(space-between,center,row);
+        .owl-prev,
+        .owl-next {
+            position: relative;
+            margin: 0!important;
+            width: 46px;
+            height: 46px;
+            @include flex(center,center,row);
+            background: $green!important;
+            transition: 0.5s;
+            border-radius: 0!important;
+            img {
+                width: 22px;
+                height: 22px;
+                &:hover {
+                    opacity: 0.5;
+                }
+            }
+            &:hover {
+                background-color: none!important;
+            }
+        } 
+        .owl-prev {
+            left: 0;
+        }  
+        .owl-next {
+            right: 0;
+        }
+    }
+}
+.quote {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: $green!important;
+    background-color: $white;
+    @include flex(center,center,row);
+    width: 45px;
+    height: 45px;
+}

@@ -1,0 +1,76 @@
+.header-svg {
+    fill: $green;
+}
+
+// header-bot
+
+.logo-src {
+    display: block;
+    width: 245px;
+    height: 48px;
+}
+
+.contact-link {
+    &:hover {
+        color: $dark;
+    }
+}
+
+.navigation-link {
+    &::before {
+        content: '';
+        width: 0;
+        height: 8px;
+        position: absolute;
+        top: -4px;
+        left: 0;
+        background-color: $green;
+    }
+    &:hover {
+        color: $green;
+        &::before {
+            width: 100%;        
+        }
+    }
+}
+
+.drop-link {
+    &:hover {
+        background-color: $extra-light-grey;
+    }
+}
+
+.contact-link {
+    svg {
+        fill: $white;
+    }
+    &:hover {
+        color: $dark!important;
+        svg {
+            fill: $dark;
+        }
+    }
+}
+
+.active {
+    .navigation-link {
+        color: $green;
+        &::before {
+            width: 100%;
+        }
+    }
+    .contact-link {
+        color: $dark;
+        svg {
+            fill: $dark;
+        }
+    }
+}
+
+@include mq(tablet) {
+    .navigation-link {
+        &::before {
+            display: none;
+        }
+    }
+}

@@ -1,0 +1,34 @@
+.svg {
+    fill: $green;
+    width: 80px;
+    height: 80px;
+}
+
+.link-card {
+    color: $green;
+    position: relative;
+    &::after {
+        content: '';
+        width: 20px;
+        height: 2px;
+        position: absolute;
+        top: 50%;
+        left: 100px;
+        background-color: #7AB730;
+    }
+    svg {
+        position: absolute;
+        top: 3px;
+        left: 110px;
+    }
+    &:hover {
+        color: $green;
+        text-decoration: none; 
+        &::after {
+            width: 30px;
+        }
+        svg {
+            left: 120px;
+        }
+    }
+}

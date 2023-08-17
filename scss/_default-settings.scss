@@ -1,0 +1,16 @@
+body {
+    font-family: $primary-font!important;
+    @include text(16px,20px,400,$grey);
+    background-color: $white;
+}
+
+
+ h1,h2,h5,h6,
+ .text,
+ a {
+    font-family: $secondary-font!important;
+}
+
+.green {
+    background-color: $green!important;
+}

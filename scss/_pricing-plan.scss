@@ -1,0 +1,22 @@
+.currency {
+    @include text(22px,45px,700,$white);
+}
+
+.monthly {
+    @include text(16px,40px,700,$white);
+}
+
+.check {
+    fill: $green;
+}
+
+.ex {
+    fill: $red;
+}
+
+.hover {
+    &:hover {
+        color: $dark!important;
+    }
+}
+

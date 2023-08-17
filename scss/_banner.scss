@@ -1,0 +1,41 @@
+.banner {
+    @extend %cover;
+}
+
+.banner-title {
+    @include text(80px,96px,700,$dark-grey);
+}
+
+.banner-subtitle {
+    @include text(40px,48px,700,$white);
+}
+
+.banner-text {
+    @include text(24px,36px,400,$white);  
+}
+
+.banner-btn {
+    width: 60px;
+    height: 60px;
+    @include center();
+    svg {
+        fill: $green;
+        width: 20px; 
+        height: 20px;
+    }
+}
+
+@include mq(tablet) {
+    .banner-title {
+        font-size: 70px;
+        line-height: 85px;
+    }
+    .banner-subtitle {
+        font-size: 37px;
+        line-height: 44px;
+    }
+    .banner-text {
+        font-size: 23px;
+        line-height: 35px;
+    }
+}

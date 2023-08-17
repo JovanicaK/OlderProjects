@@ -1,0 +1,45 @@
+// colors
+$black: #000;
+$white: #fff;
+$green: #7AB730;
+$yellow: #FFD33C;
+$extra-light-grey: #F3F3F3;
+$dark-grey: #212121;
+$dark: #212529;
+$red: #dc3545;
+$grey: #656565;
+$white-border: #dee2e6;
+
+
+// fonts
+$primary-font: 'Poppins', sans-serif;
+$secondary-font: 'Roboto', sans-serif;
+
+// mixins
+@mixin text($fz,$lh,$fw,$color) {
+    font-size: $fz;
+    line-height: $lh;
+    font-weight: $fw;
+    color: $color;
+}
+
+@mixin flex($jc,$ai,$fd) {
+    display: flex!important;
+    flex-wrap: wrap;
+    justify-content: $jc;
+    align-items: $ai;
+    flex-direction: $fd;
+}
+
+@mixin center() {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+// placeholders
+%cover {
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+}

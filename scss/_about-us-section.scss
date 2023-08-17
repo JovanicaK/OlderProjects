@@ -1,0 +1,37 @@
+
+.pic-holder {
+    min-height: 500px;
+}
+
+.pic {
+    object-fit: cover;
+}
+
+.title-holder {
+    border-left: 4px solid $green;
+    max-width: 610px;
+}
+
+.subtitle {
+    @include text(16px,19px,700,$green);
+}
+
+.title {
+    @include text(48px,58px,700,$dark-grey);
+}
+
+.text {
+    @include text(24px,29px,700,$grey);
+}
+
+.tab-btn {
+    color: $green;
+    background-color: $extra-light-grey;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    background-color: $green!important;
+}
+
+
+
