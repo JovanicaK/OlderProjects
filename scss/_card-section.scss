@@ -1,0 +1,141 @@
+.card-section {
+    background-color: $white;
+}
+
+.container {
+    @include flex();
+    position: relative;
+    margin-left: -40px;
+}
+
+.up {
+    margin: -160px 0 130px -40px;
+}
+
+.card {
+    flex: 1 1 25%;
+    max-width: 25%;
+    padding-left: 40px; 
+}
+
+.card-inner {
+    @include center();
+    flex-direction: column;
+    text-align: center;
+    padding: 30px 15px;
+    box-shadow: 0px 0px 15px $shadow-black;
+}
+
+.card-icon {
+    display: block;
+    width: 60px;
+    height: 60px;
+    background-color: $white;
+    @include center();
+    margin-bottom: 50px;
+    border-radius: 50%;
+    svg {
+        height: 23px;
+        width: 23px;
+        margin: 0 auto;
+    }
+}
+
+.card-title {
+    @include text(16px,18px,700,$white);
+    margin-bottom: 15px;
+    text-transform: capitalize;
+}
+
+.card-text {
+    @include text(14px,16px,400,$white);
+}
+
+.hover-inner {
+    background-color: $white;
+    .card-title,
+    .card-text {
+        color: $dark-grey;
+    }
+    .card-icon {
+        svg {
+            fill: $white;
+        }
+    }
+}
+.two-card-holder {
+    @include flex();
+    position: relative;
+    margin-left: -40px;
+}
+
+.card2 {
+    flex: 1 1 50%;
+    max-width: 50%;
+    padding-left: 40px;
+}
+.card2-src {
+    display: block;
+    width: 100%;
+}
+
+.heading-link {
+    display: block;
+    @include text(20px,22px,400,$dark-grey);
+    text-decoration: none;
+    text-transform: capitalize;
+    padding: 15px; 
+    border: 1px solid $light-grey;
+    position: relative;
+    &::after {
+        content: '›';
+        position: absolute;
+        top: 12px;
+        right: 15px;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background-color: $grey;
+        color: $white;
+        @include center();
+        font-weight: 700;
+    }
+}
+
+.hoverlink {
+    .heading-link {
+        background-color: $grey;
+        color: $white;
+        &::after {
+            background-color: $white;
+            color: $grey;
+        }
+    }
+}
+
+@include mq(phone) {
+    .container {
+        display: block;
+        width: 100%;
+        margin-left: 0;
+    }
+    .card {
+        flex: none;
+        max-width: 100%;
+        padding-left: 0;
+        margin-bottom: 50px;
+    }
+    .two-card-holder {
+        display: block;
+        width: 100%;
+        margin-left: 0;
+    }
+    .card2 {
+        flex: none;
+        max-width: 100%;
+        @include center();
+        flex-direction: column;
+        margin-bottom: 50px;
+        padding-left: 0;
+    }
+}

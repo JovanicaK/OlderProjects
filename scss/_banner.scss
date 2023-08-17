@@ -1,95 +1,56 @@
 .banner {
-    position: relative;
-    .wrap {
-        position: absolute;
-        top: 50%;
-        left: 0;
-        right: 0;
-        transform: translateY(-50%);
-    }
-}
-
-.banner-holder {
     @extend %cover;
-    width: 100%;
-    height: 500px;
+    padding: 200px 0 280px;
+    position: relative;
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: $black;
+        opacity: 0.6;
+    }
 }
-
-.banner-inner {
-    @extend %clearfix;
-    max-width: 55%;
-    float: right;
-    padding: 100px 0;
+.banner-holder {
+    position: relative;
+    z-index: 2;
+    @include center();
+    flex-direction: column;
+    text-align: center;
 }
-
-.banner-subtitle {
-    @include text(50px,60px,400);
-    text-transform: uppercase;
-    color: $light-grey;
-}
-
 .banner-title {
-    @include text(80px,90px,700);
-    text-transform: uppercase;
-    color: $dark-blue;
+    @include text(56px,65px,400,$white);
+    margin-bottom: 20px;
+    text-transform: capitalize;
 }
-
 .banner-text {
-    @include text(16px,25px,400);
-    padding: 20px 0;
-    color: $light-grey;
+    @include text(16px,26px,400,$white);
+    margin-bottom: 50px;
 }
-
 .banner-btn {
-    @include text(16px,22px,700);
+    padding: 8px 10px;
+    @include text(14px,16px,400,$white);
+    text-decoration: none;
     text-transform: uppercase;
-    border: 2px solid $dark-blue;
-    color: $light-grey;
-    padding: 10px 20px;
-    cursor: pointer;
+    border: 1px solid $grey;
     &:hover {
-        background-color: $dark-blue;
-        color: $white;
+        border-color: $white;
     }
 }
 
-@include mq(tablet) {
-    .banner-inner {
-        padding: 60px 0;
-    }
-    .banner-subtitle {
-        font-size: 30px;
-        line-height: 40px;
-    }
-    .banner-title {
-        font-size: 50px;
-        line-height: 60px;
-    }
-    .banner-text {
-        padding: 10px 0;
-    }
-}
 @include mq(phone) {
-    .banner-inner {
-        padding: 30px 0;
-        float: none;
-        max-width: 100%;
-        text-align: center;
-    }
-    .banner-subtitle {
-        font-size: 20px;
-        line-height: 25px;
+    .banner {
+        min-height: 500px;
+        padding: 150px 0 230px;
     }
     .banner-title {
-        font-size: 30px;
-        line-height: 35px;
+        font-size: 28px;
+        line-height: 30px;
     }
     .banner-text {
-        padding: 5px 0;
-    }
-    .banner-btn {
         font-size: 14px;
-        line-height: 18px;
-        padding: 5px 10px;
+        line-height: 16px;
     }
 }

@@ -1,14 +1,16 @@
 @import 'reset';
-@import 'fonts';
-@import 'breakpoints';
-@import 'helpers';
 @import 'variables';
+@import 'helpers';
 @import 'breakpoints';
-@import 'slick';
+@import 'fonts&animation';
 @import 'header';
 @import 'banner';
-@import 'banner2';
-@import 'cards';
-@import 'last-section';
+@import 'card-section';
+@import 'six-cards-section';
+@import 'percent-section';
+@import 'three-cards-section';
+@import 'two-cards-section';
+@import 'contact-details';
 @import 'footer';
+
 

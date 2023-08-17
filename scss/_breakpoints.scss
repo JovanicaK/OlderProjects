@@ -1,10 +1,10 @@
 @mixin mq($value) {
 	@if $value == 'phone' {
-		@media only screen and (max-width: 767px) { @content; }
+		@media only screen and (max-width: 832px) { @content; }
 	} @else if $value == 'tablet' {
-		@media only screen and (min-width: 768px) and (max-width: 1200px) { @content; }
+		@media only screen and (min-width: 833px) and (max-width: 1086px) { @content; }
 	} @else if $value == 'desktop' {
-		@media only screen and (min-width: 1201px) { @content; }
+		@media only screen and (min-width: 1087px) { @content; }
 	} @else {
 		@media only screen and (max-width: $value) { @content; }
 	}

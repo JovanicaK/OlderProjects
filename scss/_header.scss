@@ -1,243 +1,142 @@
 .header {
-    background-color: $white;
-    padding: 10px 0;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 100;
+    background-color: $black;
     .wrap {
-        @extend %clearfix;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
 }
-
-.toggle {
-    display: none;
-}
-
-.logo {
-    float: left;
+.logo-link {
+    padding: 20px 0;
     &:hover {
         opacity: 0.7;
     }
 }
-
 .logo-src {
-    height: 100px;
-    display: block;
+    height: 30px;
 }
-
-.header-right {
-    float: right;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    align-items: flex-end;
-    margin-top: 20px;
-}
-
-.header-top {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-.smedia-list {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0 40px;
-}
-
-.smedia-item {
-    display: inline-block;
-    margin: 0 5px;
-
-}
-
-.smedia-item-link {
-    display: block;
-    width: 20px;
-    height: 20px;
-    background-color: $light-black;
-    transform: rotate(45deg);
-    position: relative;
-    svg {
-        display: block;
-        height: 10px;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%) rotate(-45deg);
-        fill: $white;
-    }
-    &:hover {
-        background-color: $blue;
-    }
-}
-
-.lang-menu {
-    border: none;
-    cursor: pointer;
-    display: block;
-}
-
-.english,
-.german,
-.italian {
-    @include text (14px,16px,400);
-}
-
-.nav {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    margin: 10px 0;
-}
-
 .nav-list {
-    display: flex;
-    flex-wrap: wrap;
+    @include center();
 }
-
 .nav-item {
-    margin-left: 50px;
+    position: relative;
+    padding: 22px 0 22px 20px;
 }
-
 .nav-link {
     display: block;
-    @include text(18px,25px,700);
+    @include text(14px,16px,400,$white);
+    padding: 5px;
+    text-transform: uppercase;
     text-decoration: none;
-    color: $light-grey;
-        &:hover {
-        border-bottom: 4px solid $blue;
-       
+    position: relative;
+    &:hover {
+        color: $grey;
     }
 }
-
-.main {
-    padding-top: 125px;
+.drop {
+    &::after {
+        content:'▿';
+        position: absolute;
+        top: 8px;
+        left: -5px;
+        @include text(10px,10px,900,$white);
+    }
+}
+.first {
+    color: $grey;
+}
+.dropdown-list {
+    display: none;
+}
+.drop2 {
+    &::after {
+        content:'▿';
+        position: absolute;
+        top: 14px;
+        left: 5px;
+        @include text(10px,10px,900,$white)
+    }
+}
+.active {
+    .dropdown-list {
+        display: block;
+        position: absolute;
+        top: 70px;
+        left: 12px;
+        width: 150px;
+        z-index: 10;
+    }
+    .dropdown-list-item {
+        display: block;
+        position: relative;
+    }
+    .dropdown-list-link {
+        display: block;
+        @include text(14px,16px,400,$white);
+        background-color: $light-grey;
+        border-bottom: 1px solid $light-grey;
+        padding: 10px 15px;
+        text-transform: capitalize;
+        text-decoration: none;
+        position: relative;
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+    .dd-list {
+        display: none;
+    }
+}
+.active-drop {
+    .dd-list {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 150px;
+        width: 150px;
+        z-index: 10;
+    }
+}
+.form {
+    display: none;
+}
+.form-select {
+    background-color: $white;
+    color: $black;
+    padding: 5px;
+    text-transform: uppercase;
+}
+.selected {
+    text-transform: uppercase;
+}
+.option {
+    text-transform: capitalize;
 }
 
 @include mq (tablet) {
-    .logo-src {
-        height: 70px;
+    .nav {
+        display: none;
     }
-    .header-right {
-        margin-top: 5px;
-    }
-    .header-top {
-        margin-bottom: 10px;
-    }
-    .nav-item {
-        margin-left: 30px;
-    }
-    .nav-link {
-        font-size: 16px;
-        line-height: 20px;
-    }
-    .main {
-        padding-top: 100px;
+    .form {
+        display: block;
     }
 }
-
 @include mq (phone) {
-    .toggle {
-        display: block;
-        width: 48px;
-        height: 48px;
-        border: none;
-        position: absolute;
-        top: 50%;
-        left: 20px;
-        transform: translateY(-50%);
-        background-color: transparent;
-    }
-    .toggle-line {
-        width: 30px;
-        height: 3px;
-        background-color: $light-black;
-        display: block;
-        margin: 0 auto;
-        position: absolute;
-        top: 50%;
-        left: 0;
-        right: 0;
-        transform: translateY(-50%);
-        &::before,
-        &::after {
-            content: '';
-            width: 30px;
-            height: 3px;
-            background-color: $light-black;
-            position: absolute;
-            left: 0;
+    .header {
+        padding: 20px 0;
+        .wrap {
+            @include center();
+            flex-direction: column;
         }
-        &::before {
-            top: 8px;
-        }
-        &::after {
-            top: -8px;
-        }
-    }
-    .opened {
-        .header {
-            border-bottom: 1px solid $light-grey;
-        }
-        .toggle-line {
-            background-color: transparent;
-            &::before {
-                transform: rotate(45deg);
-                top: 0;
-            }
-            &::after {
-                transform: rotate(-45deg);
-                top: 0;
-            }
-        }
-    }
-    .logo {
-        float: none;
-        display: inline-block;
-        position: absolute;
-        top: 50%;
-        left: 50px;
-        transform: translateY(-50%);
-    }
-    .logo-src {
-        height: 50px;
-        margin: 0 auto;
-    }
-    .header-right {
-        float: none;
-        margin: 0;
-    }
-    .header-top {
-        flex-direction: column;
-        margin: 0;
-        justify-content: center;
-    }
-    .smedia-list {
-        margin: 10px 0;
     }
     .nav {
         display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        text-align: center;
-        margin: 0;
-        background-color: $white;
     }
-    .nav-list {
+    .form {
         display: block;
-        margin: 0 auto;
+        width: 100%;
     }
-    .nav-link {
-        display: inline-block;
-    }
-    .main {
-        padding-top: 80px;
+    .form-select {
+        width: 100%;
     }
 }

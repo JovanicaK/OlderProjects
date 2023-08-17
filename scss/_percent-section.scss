@@ -1,0 +1,59 @@
+.percent-section {
+    background-color: $white;
+}
+
+.black {
+    color: $dark-grey;
+}
+
+.graph-holder {
+    @include center();
+    flex-direction: column;
+}
+
+.graph {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.graph-value {
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 18px;
+    color: $dark-grey;
+    &::after {
+        content: '%';
+    }
+}
+
+.chart-name {
+    @include text(14px,16px,400,$dark-grey);
+    text-transform: uppercase;
+}
+
+@include mq(tablet) {
+    .percent-section {
+        .container {
+            .normal {
+                margin-bottom: -50px;
+            }
+        }
+        .card {
+            flex: 1 1 50%;
+            max-width: 50%;
+            margin-bottom: 50px;
+        }
+    }
+    
+}
+
+@include mq(phone) {
+    .percent-section {
+        .container {
+            margin-bottom: -50px;
+        }
+    }
+}
