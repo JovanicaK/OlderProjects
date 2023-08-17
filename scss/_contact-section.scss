@@ -1,0 +1,80 @@
+.contact-section {
+    background-color: $blue;
+}
+.cards-holder {
+    display: flex;
+    margin: 0 -24px;
+    padding: 50px 0;
+}
+.card4 {
+    flex: 1 1 25%;
+    max-width: 25%;
+    margin: 0 24px;
+}
+.card4-link {
+    text-decoration: none;
+    color: $white;
+    @include flex(flex-start,center,row);
+    &:hover {
+        .card4-icon {
+            background-color: $light-blue;
+            opacity: 1;
+            svg {
+                fill: $white;
+            }
+        }
+    }
+}
+.card4-icon {
+    width: 45px;
+    height: 45px;
+    background-color: $white;
+    opacity: 0.3;
+    border-radius: 50%;
+    margin-right: 15px;
+    @include centerFlex();
+    svg {
+        fill: $light-blue;
+    }
+}
+
+.card-text {
+    padding-top: 4px;
+}
+
+.strong {
+    display: block;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+.location {
+    color: $light-blue;
+}
+
+@include mq(tablet) {
+    .card4-link {
+        flex-direction: column;
+    }
+    .card4-icon {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+    .card-text {
+        text-align: center;
+    }
+}
+
+@include mq(phone) {
+    .cards-holder {
+        display: block;
+        padding: 20px 0;
+        margin: -10px 0;
+    }
+    .card4 {
+        @include noFlex();
+        margin: 10px 0;
+    }
+    .card4-link {
+        justify-content: center;
+    }
+}

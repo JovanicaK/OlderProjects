@@ -1,0 +1,82 @@
+.cards-section {
+    background-color: $white;
+    padding: 80px 0;
+}
+.title-holder {
+    @include flex(center,center,column);
+    margin-bottom: 80px;
+    text-align: center
+}
+.subtitle {
+    @include text(11px,15px,400,$dark);
+}
+.title {
+    @include text(19px,25px,400,$dark);
+    font-family: $secondary-font;
+}
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -30px -24px;
+}
+.card3 {
+    flex: 1 1 33.33%;
+    max-width: 33.33%;
+    padding: 30px 24px;
+}
+.card3-holder {
+    display: block;
+    padding: 40px 25px 30px;
+    border: 1px solid $light-blue;
+    text-decoration: none;
+    color: $dark;
+    position: relative;
+    &:hover {
+        background-color: $blue;
+        color: $white;
+        .card3-icon {
+            background-color: $light-blue;
+        }
+        .card3-title {
+            color: $white;
+        }
+        .card3-link {
+            color: $light-blue;
+        }
+    }
+}
+.card3-icon {
+    width: 50px;
+    height: 50px;
+    background-color: $blue;
+    @include centerFlex();
+    position: absolute;
+    right: 10px;
+    top: -25px;
+    svg {
+        fill: $white;
+    }
+}
+.card3-title {
+    @include text(19px,25px,700,$dark);
+    font-family: $secondary-font;
+    margin-bottom: 15px;
+}
+.card3-link {
+    display: block;
+    margin-top: 20px;
+}
+
+@include mq(phone) {
+    .card-container {
+        display: block;
+        margin: 0 auto;
+        max-width: 350px;
+    }
+    .card3 {
+        @include noFlex();
+    }
+    .title-holder {
+        margin-bottom: 50px;
+    }
+}

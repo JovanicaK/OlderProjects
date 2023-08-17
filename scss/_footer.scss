@@ -1,0 +1,169 @@
+.footer-top {
+    background-color: $blue;
+    color: $white;
+    .cards-holder {
+        padding: 0;
+    }
+    .card3-title {
+        @include text(17px,19px,700,$white);
+        margin-bottom: 50px;
+    }
+    .card3-text {
+        display: block;
+        margin: 14px 0;
+        color: $white;
+        font-weight: 400;
+    }
+    .link {
+        text-decoration: none;
+        color: $light-blue;
+        &:hover {
+            color: $white;
+        }
+    }
+}
+.footer-sm-list {
+    margin-top: 30px;
+    @include flex(flex-start,flex-start,row);
+    margin-right: -5px;
+}
+
+.footer-sm-item {
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+.colors {
+    background-color: $whitish;
+    svg {
+        fill: $white;
+    }
+}
+.footer-sm-link {
+    height: 36px;
+    width: 36px;
+    @include centerFlex();
+    svg {
+        width: 20px;
+        height: 20px;
+    }
+}
+.link-list {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: -2px;
+}
+.link-list-item {
+    display: block;
+    margin-bottom: 15px;
+    border-bottom: 1px solid $whitish;
+}
+.last {
+    margin-bottom: 0!important;
+    border-bottom-color: transparent!important;
+}
+.link-list-link {
+    display: block;
+    padding-bottom: 15px;
+    color: $light-blue;
+    text-decoration: none;
+    &:hover {
+        color: $white;
+    }
+}
+.form-inp {
+    background-color: $whitish;
+    color: $white;
+    display: block;
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 15px;
+    &:focus {
+        background-color: $light-blue;
+        border-color: none!important;
+    }
+}
+.form-inp,
+.form-btn {
+    border-radius: 12px;
+    border: 1px solid transparent;
+}
+.form-btn {
+    padding: 10px 15px 12px;
+    background-color: $light-blue;
+    color: $white;
+    &:hover {
+        background-color: transparent;
+        border-color: $white;
+    }
+}
+.blog-post {
+    @include flex(flex-start,flex-start,column);
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid $whitish;
+}
+.blog-post-link {
+    text-decoration: none;
+    color: $light-blue;
+    font-family: $secondary-font;
+    &:hover {
+        color: $white;
+    }
+}
+.blog-time {
+    @include text(11px,13px,400,$white);
+    margin-bottom: 10px;
+}
+.footer-bot {
+    background-color: $footer-blue;
+    padding: 30px 0;
+    .wrap {
+        @include flex(space-between,center,row);
+    }
+}
+.footer-bot-link {
+    color: $white;
+    text-decoration: none;
+    &:hover {
+        color: $light-blue;
+    }
+}
+.backtotop-btn {
+    background-color: $light-blue;
+    position: fixed;
+    bottom: 25px;
+    right: 15px;
+    width: 36px;
+    height: 36px;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    opacity: 0.5;
+    display: none;
+    &::after {
+        content: '\005E';
+        display: block;
+        width: 100%;
+        height: 100%;
+        @include text(24px,42px,900,$white);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    &:hover {
+        opacity: 1;
+    }
+}
+@include mq(tablet) {
+    .backtotop-btn {
+        right: 10px;
+    }
+}
+
+@include mq(phone) {
+    .card4 {
+        margin-bottom: 30px;
+    }
+}
+

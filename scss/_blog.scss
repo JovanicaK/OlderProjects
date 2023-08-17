@@ -1,0 +1,43 @@
+.blog-details {
+    @include flex(flex-start,center,row);
+    @include text(11.2px,13px,400,$dark);
+    margin-bottom: 5px;
+    margin-top: 15px;
+    svg {
+        fill: $dark;
+    }
+}
+.blog-link {
+    text-decoration: none;
+    padding: 0 10px;
+    margin-right: 5px;
+    border-right: 1px solid $dark;
+    color: $light-blue;
+    &:hover {
+        text-decoration: underline;
+    }
+}
+.link {
+    text-decoration: none;
+    color: $light-blue;
+    font-weight: 400;
+    &:hover {
+        text-decoration: underline;
+    }
+}
+.blog-text {
+    font-weight: 400;
+    .card3-text {
+        display: block;
+        margin: 14px 0;
+        color: $dark;
+    }
+}
+
+@include mq(phone) {
+    .blog {
+        .card3 {
+            padding: 0 0 30px 0;
+        }
+    }
+}
