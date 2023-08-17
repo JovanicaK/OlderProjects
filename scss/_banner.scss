@@ -1,0 +1,44 @@
+/* banner */
+.banner {
+    position: relative;
+}
+
+.banner-text {
+    font-size: 21px;
+    line-height: 23px;
+    font-weight: 700;
+    color: $grey;
+    display: block;
+    padding: 40px 0;
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+    font-style: italic;
+}
+
+.banner-link {
+    display: block;
+    &:hover {
+        opacity: 0.5;
+    }
+}
+
+.banner-src {
+    width: 100%;
+}
+
+@include mq(tablet) {
+    .banner-text {
+        font-size: 18px;
+        line-height: 20px;
+        padding: 10px 0;
+    }
+}
+
+@include mq(phone) {
+    .banner-text {
+        font-size: 16px;
+        line-height: 18px;
+        padding: 10px 0;
+    }
+}
