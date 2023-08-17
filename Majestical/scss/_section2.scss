@@ -1,0 +1,150 @@
+// section2
+.cards-section {
+    background-color: $white;
+    padding-top: 70px;
+    position: relative;
+}
+
+.card-holder {
+    @include flex;
+    margin-right: -30px;
+}
+
+.two-card-holder {
+    flex: 1 1 50%;
+    max-width: 50%;
+    flex-direction: column;
+    align-items: center;
+    padding-right: 30px;
+}
+
+.card {
+    padding-bottom: 70px;
+}
+
+.card-title {
+    @include text(36px,46px,400,$grey);
+    text-transform: capitalize;
+    margin-bottom: 30px;
+}
+
+.card-content {
+    .person {
+        display: flex;
+        align-items: center;
+    }
+}
+
+.card-subtitle {
+    @include flex;
+    align-items: center;
+}
+
+.card-icon {
+    height: 110px;
+    svg {
+        display: block;
+        fill: $extra-light-grey;
+        height: 100%;
+        width: 100%;
+        margin: 0 auto
+    }
+}
+
+.card-name {
+    @include text(26px,36px,700,$black);
+    text-transform: capitalize;
+}
+
+.ceo {
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+.card-text {
+    @include text(23px,33px,400,$light-grey);
+}
+
+
+.card-src {
+    height: 210px;
+    width: 210px;
+    padding: 5px;
+    border: 1px solid $extra-light-grey;
+}
+
+.card-text-holder {
+    margin-left: 20px;
+    .card-name {
+        display: block;
+        margin-bottom: 20px;
+    }
+}
+
+@include mq(tablet) {
+    .cards-section {
+        padding-top: 50px;
+        .wrap2 {
+            padding: 0 20px;
+        }
+    }
+    .card-title {
+        font-size: 30px;
+        line-height: 40px;
+    }
+    .card-icon {
+        height: 70px;
+    }
+    .card-name {
+        font-size: 24px;
+        line-height: 34px;
+    }
+    .card-text {
+        font-size: 20px;
+        line-height: 30px;
+    }
+    .card-content {
+        .person {
+            align-items: flex-start;
+            padding-bottom: 20px;
+        }
+    }
+    .card-src {
+        height: 130px;
+        width: 130px;
+    }
+    .card-text-holder {
+        margin-top: 0px;
+        margin-left: 10px;
+        .card-name {
+            line-height: 26px;
+            margin-bottom: 10px;
+        }
+    }
+}
+
+@include mq(phone) {
+    .cards-section {
+        padding-top: 0;
+        .wrap2 {
+            padding: 0 20px;
+        }
+    }
+    .card-holder {
+        display: block;
+    }
+    .two-card-holder {
+        flex: none;
+        max-width: 100%;
+        padding-top: 30px;
+    }
+    .card {
+        padding-bottom: 20px;
+    }
+    .card-content {
+        padding-right: 0;
+        .person {
+            align-items: flex-start;
+        }
+    }
+}

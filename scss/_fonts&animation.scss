@@ -1,0 +1,14 @@
+body {
+    font-family: $primary-font;
+}
+
+h1,h2,h3,
+.heading-link,
+.blog-link {
+    font-family: $secondary-font;
+}
+
+// prepisala, ali proucila
+*, *::after, *:hover {
+    transition: all .3s ease-in-out;
+}

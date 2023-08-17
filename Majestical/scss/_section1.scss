@@ -1,0 +1,72 @@
+// section 1
+.title-section {
+    background-color: $white;
+    text-align: center;
+    padding-top: 50px;
+    position: relative;
+}    
+
+.line {
+    border-bottom: 2px solid $extra-light-grey;
+}
+
+.title {
+    display: inline-block;
+    @include text(102px,112px,400,$extra-light-grey);
+    text-transform: uppercase;
+    &::first-letter {
+        font-size: 132px;
+    } 
+}
+
+.second {
+    padding-left: 20px;
+}
+
+.quotation {
+    @include text(46px,60px,400,$light-grey);
+    font-style: italic;
+    padding-bottom: 50px;
+}
+
+@include mq(tablet) {
+    .title-section {
+        padding-top: 20px;
+        .wrap2 {
+            padding: 0 20px;
+        }
+    }
+    .title {
+        font-size: 60px;
+        line-height: 80px;
+        &::first-letter {
+            font-size: 80px;
+        }
+    }
+    .quotation {
+        font-size: 38px;
+        line-height: 40px;
+        padding-bottom: 20px;
+    }
+}
+
+@include mq(phone) {
+    .title-section {
+        padding-top: 20px;
+        .wrap2 {
+            padding: 0 20px;
+        }
+    }
+    .title {
+        font-size: 40px;
+        line-height: 50px;
+        &::first-letter {
+            font-size: 50px;
+        }
+    }
+    .quotation {
+        font-size: 26px;
+        line-height: 32px;
+        padding-bottom: 20px;
+    }
+}
