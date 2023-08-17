@@ -1,0 +1,57 @@
+.wrap {
+    width: 100%;
+    padding: 0 20px;
+    margin: 0 auto;
+}
+
+.wrap2 {
+    width: 100%;
+    padding: 0 30px;
+    margin: 0 auto;
+}
+
+%clearfix {
+    &::before,
+    &::after {
+        content: '';
+        display: block;
+    }
+    &::after {
+        clear: both;
+    }
+}
+
+%cover {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+@mixin text($fz,$lh,$fw,$color) {
+    font-size: $fz;
+    line-height: $lh;
+    font-weight: $fw;
+    color: $color;
+}
+
+@mixin img($high) {
+    display: block;
+    height: $high;
+}
+
+@mixin flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+@mixin centerFlex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin noflex {
+    flex: none;
+    max-width: 100%;
+}
